@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="882.5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.inventorymanagement.Controller.ModifyProductController">
+    <children>
+        <Pane layoutX="20.0" layoutY="20.0" prefHeight="585.0" prefWidth="842.5" style="-fx-border-color: black; -fx-border-radius: 7.5px;">
+            <children>
+                <TextField fx:id="modifyProductSearch" layoutX="660.0" layoutY="25.0" minHeight="25.0" minWidth="160.0" onKeyTyped="#onModifyProductSearchTyped" prefHeight="25.0" prefWidth="170.0" promptText="Search by Part ID or Name">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TableView fx:id="modifyProductPartsTable" layoutX="465.0" layoutY="60.0" prefHeight="200.0" prefWidth="365.0">
+                    <columns>
+                        <TableColumn fx:id="modifyProductTopIDColumn" prefWidth="57.5" text="Part ID" />
+                        <TableColumn fx:id="modifyProductTopNameColumn" text="Part Name" />
+                  <TableColumn fx:id="modifyProductTopInvColumn" prefWidth="102.5" text="Inventory Level" />
+                  <TableColumn fx:id="modifyProductTopPriceColumn" prefWidth="125.0" text="Price/Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Button layoutX="785.0" layoutY="267.5" minHeight="25.0" mnemonicParsing="false" onAction="#onModifyProductAdd" prefHeight="25.0" prefWidth="45.0" text="Add">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="modifyProductAssociatedPartsTable" layoutX="465.0" layoutY="302.5" prefHeight="200.0" prefWidth="365.0">
+                    <columns>
+                        <TableColumn fx:id="modifyProductBottomIDColumn" prefWidth="57.5" text="Part ID" />
+                        <TableColumn fx:id="modifyProductBottomNameColumn" text="Part Name" />
+                  <TableColumn fx:id="modifyProductBottomInvColumn" prefWidth="102.5" text="Inventory Level" />
+                  <TableColumn fx:id="modifyProductBottomPriceColumn" prefWidth="125.0" text="Price/Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Button layoutX="665.0" layoutY="512.5" minHeight="25.0" mnemonicParsing="false" onAction="#onModifyPartRemove" prefHeight="25.0" prefWidth="165.0" text="Remove Associated Part">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="665.0" layoutY="545.0" minHeight="25.0" mnemonicParsing="false" onAction="#onModifyPartSave" prefHeight="25.0" prefWidth="50.0" text="Save">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="765.0" layoutY="545.0" minHeight="25.0" minWidth="55.0" mnemonicParsing="false" onAction="#onModifyPartCancel" prefHeight="25.0" prefWidth="65.0" text="Cancel">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="25.0" layoutY="25.0" prefHeight="25.0" style="-fx-font-weight: bold;" text="Modify Product">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="modifyProductID" disable="true" layoutX="100.0" layoutY="90.0" minHeight="25.0" prefHeight="25.0" prefWidth="135.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="45.0" layoutY="90.0" prefHeight="25.0" text="ID">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="modifyProductPrice" layoutX="100.0" layoutY="202.5" minHeight="25.0" prefHeight="25.0" prefWidth="65.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="modifyProductMax" layoutX="100.0" layoutY="237.5" minHeight="25.0" prefHeight="25.0" prefWidth="65.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="modifyProductInv" layoutX="100.0" layoutY="167.5" minHeight="25.0" prefHeight="25.0" prefWidth="65.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="modifyProductName" layoutX="100.0" layoutY="125.0" minHeight="25.0" prefHeight="25.0" prefWidth="135.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="45.0" layoutY="237.5" prefHeight="25.0" text="Max">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="45.0" layoutY="202.5" prefHeight="25.0" text="Price">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="45.0" layoutY="167.5" prefHeight="25.0" text="Inv">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="45.0" layoutY="125.0" prefHeight="25.0" text="Name">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="185.0" layoutY="237.5" prefHeight="25.0" text="Min">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="modifyProductMin" layoutX="224.5" layoutY="237.5" minHeight="25.0" prefHeight="25.0" prefWidth="65.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
